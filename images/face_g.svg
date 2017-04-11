@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X8 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="48px" height="48px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 48 48"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil1 {fill:none}
+    .fil0 {fill:#BDBDBD}
+   ]]>
+  </style>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <path class="fil0" d="M17 23c-2,0 -3,2 -3,3 0,2 1,3 3,3 1,0 3,-1 3,-3 0,-1 -2,-3 -3,-3zm14 0c-1,0 -3,2 -3,3 0,2 2,3 3,3 2,0 3,-1 3,-3 0,-1 -1,-3 -3,-3zm-7 -23c-13,0 -24,11 -24,24 0,13 11,24 24,24 13,0 24,-11 24,-24 0,-13 -11,-24 -24,-24zm0 43c-11,0 -19,-8 -19,-19 0,-1 0,-1 0,-2 6,-3 10,-7 12,-13 5,6 12,10 20,10 2,0 4,0 5,0 1,1 1,3 1,5 0,11 -8,19 -19,19z"/>
+  <polygon class="fil1" points="0,0 48,0 48,48 0,48 "/>
+ </g>
+</svg>

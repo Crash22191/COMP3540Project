@@ -1,0 +1,1198 @@
+/*
+=============================================
+Font  - - - - - - - - - - - - - - - - -
+=============================================
+*/
+
+@font-face{
+    font-family: OTREE;
+    src: url(OTREE.eot);
+    src: local(OTREE), url(OTREE.ttf);
+}
+
+*{
+    font-family: OTREE;
+}
+
+body{
+    overflow:hidden;
+    background-color:gray;
+    z-index: -1;
+}
+
+
+.tab_content.row.element2 ,.tab_content.row.element1 , .tab_content.row.element3 {
+	margin-right: 20px;  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+
+#bodyBG{
+    position: absolute;
+    bottom:0px;
+    right:0px;
+    top:0px;
+    left:0px;
+    height: 100%;
+    z-index: 1;
+    width: 200%;
+	background-image:url("/images/2.jpg");
+}
+
+/*
+=============================================
+Login div - - - - - - - - - - - - - - - - - - - - -
+=============================================
+*/
+
+#loginPage1
+{
+    display: none;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius: 7px;
+    border-color: #f1105a;
+    font:20px;
+    position: absolute;
+    z-index: 10;
+    width:30%;
+    min-width: 250px;
+    height: 250px;
+    background-color: lightgray;
+    margin: 0 auto;
+    margin-left: 37%;
+    margin-top: 18.5%;
+
+}
+#loginPage1.active {
+	display: none;
+}
+
+#registerPage {
+	display: none;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius: 7px;
+    border-color: #f1105a;
+    font:20px;
+    position: absolute;
+    z-index: 10;
+    width:30%;
+    min-width: 250px;
+    height: 330px;
+    background-color: lightgray;
+    margin: 0 auto;
+    margin-left: 37%;
+    margin-top: 18.5%;
+}
+/*#loginPage.active
+{
+    -webkit-animation: mymove 0.1s 3; /* Safari 4.0 - 8.0 
+    animation: mymove 0.1s 3;
+}
+
+/* Safari 4.0 - 8.0 
+@-webkit-keyframes mymove {
+    0%   {margin-top: 18.5%;}
+    25%  {margin-top: 18%;}
+    75%  {margin-top: 18.5%}
+    100% {margin-top: 19%;}
+}
+
+/* Standard syntax 
+@keyframes mymove {
+    0%   {margin-top: 18.5%;}
+    25%  {margin-top: 18%;}
+    75%  {margin-top: 18.5%}
+    100% {margin-top: 19%;}
+}*/
+
+
+input 
+{ 
+    font-size: 18px; 
+    
+}
+#passwordLogin
+{
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), inset 0 3px 6px rgba(0,0,0,0.23);
+    padding-left:3%;
+    margin-left:5%;
+    position: static;
+    width:90%;
+    height:50px;
+    display: block;
+    background-color: white;
+}
+#loginLogin
+{
+    background: rgba(255, 255, 255, 0.4) url("images/loginInputBlack.png") no-repeat;
+    background-position: 95%;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), inset 0 3px 6px rgba(0,0,0,0.23);
+    padding-left:3%;
+    margin-left:5%;
+    position: static;
+    width:90%;
+    height:50px;
+    display: block;
+}
+.btn {
+	border-color: #f1105a;
+}
+#email
+{
+     box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), inset 0 3px 6px rgba(0,0,0,0.23);
+    padding-left:3%;
+    margin-left:5%;
+    position: static;
+    width:90%;
+    height:50px;
+    display: block;
+    background-color: white;
+}
+
+#loginLogin img
+{
+    top:0px;
+    right:0px;
+    position: relative;
+    width:10%;
+    height:10%;
+}
+
+#passwordLogin img
+{
+    top:0px;
+    right:0px;
+    position: relative;
+    width:10%;
+    height:10%;
+}
+
+#submitButton1
+{
+/*
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), inset 0 3px 6px rgba(0,0,0,0.23);
+    color:white;
+    position: absolute;
+    border-radius: 5px;
+    padding-top: 3%;
+    margin-left:5%;
+    
+    position: static;
+    width:60%;
+   
+    height:15%;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 100%;
+    background-color: #f1105a;
+    transition: background-color 2s;
+    cursor: pointer;
+*/
+    text-align: center;
+     vertical-align: middle;
+}
+
+#cancelButton
+{
+/*
+     box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), inset 0 3px 6px rgba(0,0,0,0.23);
+    color:white;
+    position: absolute;
+    border-radius: 5px;
+    padding-top: 3%;
+    margin-left:5%;
+    
+    position: static;
+    width:90%;
+    height:15%;
+    font-size: 20px;
+    background-color: #f1105a;
+    transition: background-color 2s;
+    cursor: pointer;
+*/
+    text-align: center;
+         vertical-align: middle;
+
+    
+}
+
+
+
+
+/*
+=============================================
+Первое окно(лого, в разработке) - - - - - - -
+=============================================
+*/
+
+#mainPage1{ 
+    opacity:0;
+    position: relative;
+    width: auto;
+    height: auto; 
+    text-align: center;
+    color: #2F50FF ;
+    display:block;
+    z-index: 5;
+}
+
+#loadingText{
+    position:static;
+    font-size: 30px;
+    color:#2F50FF;
+    padding-bottom: 9px;
+}
+
+#logo1 {
+    margin-top: 4%;
+    position: inherit;
+    height: 69%;
+}
+
+
+/*
+=============================================
+Главное окно - - - - - - - - - - - - - - - - 
+=============================================
+*/
+
+#mainPage{ 
+    display: none;
+    position: fixed;
+    top:10%;
+    bottom:0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    min-height: 80%;
+    margin: 0 auto;
+    margin-top: -2.5%;
+    z-index: 3;
+    border-radius: 5px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+/*
+=============================================
+ navpanel - - - - - - - - - - - - - - - - - - - 
+=============================================
+*/
+#navpanel {
+
+	position: relative;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #C7C7C7;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+/*
+=============================================
+Первый div  - - - - - - - - - - - - - - - - -
+=============================================
+*/
+#navname{
+    min-height:60px;
+    height:10%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    position: relative;
+     z-index: 13;
+}
+
+#headername{
+    text-align: center;
+}
+/*
+=============================================
+Лого и иконки на первом диве - - - - - - - - 
+=============================================
+*/
+
+#logoNavBar{
+   
+   vertical-align:middle;
+    float: center;
+    min-width:50px;
+    min-height:50px;
+    height:83%;
+    padding-top: 30px;
+    font-size: 30px;
+    margin-top: 0.%;
+}
+
+#textOtreeNavbar{
+    vertical-align:middle;
+    position: absolute;
+    text-align: center;
+    margin-top:10px;
+    margin-bottom: 15px;
+    width: 100%;
+    height:100%;
+    font-size: 300%;
+    color: #ccc;
+}
+
+ .rightnav
+{
+    position: absolute;
+    float: right;
+     font-size: 30px;
+    bottom: 0;
+    right: 0;
+    top: auto;
+    padding-right: 2%;
+    height: 42%;
+    margin-bottom: 2%;
+}
+.rightnavpic {
+	height: 50%;
+    min-height: 30px;
+}
+
+/*
+=============================================
+Навигация (2-ой div) - - - - - - - - - - - - 
+=============================================
+*/
+
+ul.tabs {
+    position: absolute;
+    z-index: 10;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	min-height: 32px;
+    height:7.5%;
+	 box-shadow: 0 14px 20px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
+    background-color: rgba(255,255,255,0.25);
+	width: 100%;
+    display: flex;
+    min-width: 100%;   
+}
+
+#border
+{
+    position: absolute;
+    height:3px;
+    background-color:#2F50FF;
+    z-index: 11;
+    overflow: visible;
+    bottom:0px;
+}
+
+/*
+=============================================
+Кнопки на панели - - - - - - - - - - - - - - 
+=============================================
+*/
+
+ul.tabs li {
+   padding-left: 2%;
+    padding-right: 2%;
+	text-align: center;
+    margin: 0 auto;
+    height: 100%;
+    min-height: 60%;
+	cursor: pointer;
+    text-align: center;
+    line-height: 100%;
+	color: black;
+	overflow: hidden;
+	position: relative;
+    transition: 0.1s ease;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center; 
+	width: 14,28%;
+}
+
+ul.tabs li:hover {
+    background-color: rgba(240,240,240,0.75);
+	color: #333;  
+}
+ul.tabs #li:hover {
+    background-color: rgba(240,240,240,0.75);
+	color: #333;   
+}
+
+#li7 
+{
+    background-color: #f1105a;
+    color:white;
+}
+#li7:hover{box-shadow :0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
+ul.tabs li.active {
+	color: #333;
+}
+
+/*
+=============================================
+Основная часть окна - - - - - - - - - - - - -
+=============================================
+*/
+
+.tab_container {
+    position: relative;
+    overflow: visible;
+	width: 100%;
+    height: 91%;
+	border-top: none;
+    margin: 0 auto;
+	clear: both;
+	background: #fff;
+    align-items: stretch;
+    z-index: 5;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.tab_content {
+    position: absolute;
+    margin: 0 auto;
+    height:100%;
+    width: 100% ;
+    text-align: center;
+	overflow: visible;
+    align-items: stretch;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;  
+}
+
+.contentpic{
+    background-size:cover;
+}
+
+/*
+=====================================
+Первое окно - - - - - - - - - - - - -
+=====================================
+*/
+
+#tab1 {
+    z-index: 1;
+     background-position: cover; 
+	background-image: url(images/mainbg1.jpg);   
+    text-align: center;
+  
+    margin-right: -5%;
+}
+
+/*
+=====================================
+Slider - - - - - - - - - - - - -
+=====================================
+*/
+.Carousel{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+        border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+  .Carousel-Slide{
+    left: 0;
+    position: relative;
+
+    height: 100%;
+    transition: left 0.5s linear;
+}
+
+    .Carousel-Slide-item{
+
+    background-color:transparent;
+      height: 100%;
+      float: left;
+    }
+
+/*---------------------------------------------
+SLIDER BACKGROUND
+---------------------------------------------*/
+#sliderBG
+{
+margin-left:-15%;
+position: absolute;
+top:0px;
+left: 0px;
+z-index: -1;
+overflow:hidden;
+height: 100%;
+width: 2000px;
+        -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+#sliderBG img
+{
+    height:120%;
+}
+#sliderBG.a1 
+{   
+    margin-left:-10%;
+    transition: margin-left 1.5s;
+}
+
+#sliderBG.a2
+{
+    margin-left:-5%;
+    transition: margin-left 1.5s;
+}
+
+/*---------------------------------------------
+SLIDER CONTROLLS NAV-LEFT NAV-RIGHT
+---------------------------------------------*/
+
+.Carousel-Controller-Nav-left
+{
+    position: absolute;
+    top: 45%; 
+    height:90px;
+    width:45px;
+    border-radius: 0 90px 90px 0;
+    -moz-border-radius: 0 90px 90px 0;
+    -webkit-border-radius: 0 90px 90px 0;
+    background-color: lightgray;
+    opacity: 0.8;
+    float:left;
+    cursor:pointer;
+}
+
+.Carousel-Controller-Nav-right img
+{
+    position: absolute;
+    margin:0 auto;
+    height:50%;
+    right:-10%;
+    top:25%;
+}
+
+.Carousel-Controller-Nav-left img
+{
+    position: absolute;
+    margin:0 auto;
+    height:50%;
+    left:-10%;
+    top:25%;
+}
+
+.Carousel-Controller-Nav-right
+{
+    position: absolute;
+    top: 45%; 
+    height:90px;
+    width:45px;
+    border-radius: 90px 0  0 90px;
+    -moz-border-radius: 90px 0  0 90px;
+    -webkit-border-radius: 90px 0 0 90px;
+    background-color: lightgray;
+    opacity: 0.8;
+    float:right;
+    right:0px;
+    margin-right: 0px;
+    cursor:pointer;
+}
+
+/*---------------------------------------------
+SLIDER CONTROLLS DOTS ***
+---------------------------------------------*/
+#dots
+{
+    position: absolute;
+    opacity: 1;
+    margin-top: 0;
+    top:92%;
+    left:49%;
+}
+#dots font {
+    text-decoration:none;
+    font-size:3em;
+    margin-right: 10px;
+    padding:0;
+}
+#dot1
+{
+    color: #f1105a;
+}
+#dot2
+{
+    color: #CCC;
+}
+#dot3
+{
+    color: #CCC;
+}
+
+/*---------------------------------------------
+SLIDER ITEM ONE 1 
+---------------------------------------------*/
+
+#slider1img
+{
+    margin-top: 7.5%;
+    height: 80%;
+    width: 50%;
+    float: left;
+}
+#slider1img img 
+{
+	height: 100%;
+}
+
+.slider1right 
+{
+    display: block;
+    padding-top:15%;
+    float: left;
+    text-align: left;
+	width: 50%;
+    height: 100%;
+}
+
+.slider1rightPart
+{
+    padding-left: 10%;
+    display: block;
+}
+
+.slider1rightPartText font
+{
+    font-size:33px;
+    color: rgba(255,255,255,0.6);
+}
+
+.slider1rightPartText
+{
+    color:white;
+    font-size:18px;
+}
+
+.slider1rightPartbtn
+{
+    margin-top:2%;
+    padding-left:2%;
+    width: 35%;
+    height:7.5%;
+    background-color: #e040fb;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.slider1rightPartbtn font
+{
+    position: relative;
+    color:white;
+    float:left;
+    font-size: 25px;
+    margin:0 auto;
+    margin-top: 4%;
+}
+
+.slider1rightPartbtn img
+{
+    position: relative;
+    margin:0 auto;
+    float: right;
+    height:100%;
+}
+
+/*---------------------------------------------
+SLIDER ITEM 2
+---------------------------------------------*/
+
+#slider2leftPart
+{
+    float: left;
+    position: relative;
+    width:60%;
+    height:100%;
+    padding-top:7%;
+    padding-left:7%;
+    
+
+
+}
+
+.slider2leftPartItem
+{
+border-right: 2px solid white;
+    position: relative;
+    display: block;
+    width:100%;
+    height:25%;
+    
+
+}
+
+.slider2leftPartItemImg
+{
+    position: relative;
+    display: inline;
+    height:100%;
+    width:20%;
+    float: left;
+    
+}
+
+.slider2leftPartItemImg img
+{
+    height: 100%;
+}
+
+.slider2leftPartItemText
+{
+    position: relative;
+    display: inline;
+    color:white;
+    height:70%;
+    width:75%;
+    float:right;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 5%;
+    padding-top:6%;
+
+}
+
+
+/*---------------------------------------------
+SLIDER ITEM 3
+---------------------------------------------*/
+
+#glk
+{
+    display: block;
+    margin-top: 1%;
+    height: 70%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#slider3p
+{
+    margin-top: -6%;
+    font-size: 35px;
+    display: block;
+    text-align: center;
+    color: #CCC;
+}
+
+#lookat 
+{
+    color: #CCC;
+}
+
+#toli2 
+{
+    margin-left:40%;
+    margin-top:2%;
+    padding-left:2%;
+    width: 20%;
+    height:7.5%;
+    background-color: #e040fb;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+/*
+=====================================
+Второе окно - - - - - - - - - - - - -
+=====================================
+*/
+
+#tab2 
+{
+     z-index: 1000;
+    background-size:cover;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   background-position: cover; 
+	background-image: url(images/mainbg1.jpg);   
+    margin-right: -5%;
+   
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+/*
+=====================================
+Третье окно - - - - - - - - - - - - -
+=====================================
+*/
+
+#tab3,#tab4,#tab5
+{
+ background-position: cover; 
+	background-image: url(images/mainbg1.jpg);   
+    background-repeat: no-repeat;
+}
+ 
+
+
+/*
+=====================================
+Правая Навигация - - - - - - - - - - 
+=====================================
+*/
+#about
+{
+   margin-top:8%; 
+}
+
+#settings
+{
+    margin-top:8%; 
+}
+
+/*
+=====================================
+INFO DIV - - - - - - - - - - 
+=====================================
+*/
+#Infodiv
+{
+    
+    position:absolute;
+    width: 100%;
+    height: 91%;
+    z-index: 12;
+    display: none;
+    text-align: center;
+     background-image: url(images/info_bg_g.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#InfodivImg
+{ 
+    border-bottom-left-radius: 5px;
+    background-color: white;
+    float:left;
+    position:static;
+    display:inline;
+    width:66%;
+    height:100%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#imageInfoDiv
+{
+    margin-top: 12.5%;
+    height:50%;
+}
+
+#InfodivDescription
+{
+    box-shadow: -2px 0px 3px rgba(0,0,0,0.12), -2px 0px 2px rgba(0,0,0,0.24);
+    background-color: rgba(47, 80, 255, 0.7);
+    color: white;
+    float:right;
+    position: static;
+    display: inline;
+    width:34%;
+    height:100%;
+    border-bottom-right-radius: 5px;
+}
+
+#infoDivUlNames
+{
+    float:left;
+    position: static;
+    color:white;
+    margin: 0 auto;
+    font-size: 20px;
+    width:40%;
+    display: inline;
+    text-align: right;
+    list-style-type:none;
+}
+
+#infoDivUlDesc
+{
+    text-align: left;
+    position: static;
+    color:lightgray;
+    margin: 0 auto;
+    font-size: 20px;
+    width:40%;
+    display: inline;
+    float:right;
+    list-style-type:none;
+}
+
+/*
+=====================================
+SETTINGS DIV - - - - - - - - - - 
+=====================================
+*/
+
+#Settingsdiv
+{
+    position:absolute;
+    width: 100%;
+    height: 91%;
+    z-index: 12;
+    display: none;
+    text-align: center;
+     background-image: url(images/info_bg_g.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+}
+
+#SettingsdivImg
+{
+    border-bottom-left-radius: 5px;
+    background-color: white;
+    float:left;
+    position:static;
+    display:inline;
+    width:66%;
+    height:100%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#imageSettingsDiv
+{
+    
+    margin-top: 12.5%;
+  
+    height:50%;
+}
+
+#SettingsdivDescription
+{
+    box-shadow: -2px 0px 3px rgba(0,0,0,0.12), -2px 0px 2px rgba(0,0,0,0.24);
+    background-color: rgba(47, 80, 255, 0.7);
+    color: white;
+    float:right;
+    position: static;
+    display: inline;
+    width:34%;
+    height:100%;
+    border-bottom-right-radius: 5px;
+}
+
+#SettingsDivUlNames
+{
+    padding-top: 10px;
+    float:left;
+    position: static;
+    color:lightgray;
+    margin: 0 auto;
+    font-size: 20px;
+    width:40%;
+    display: inline;
+    text-align: right;
+    list-style-type:none;
+}
+
+#SettingsDivUlDesc
+{
+    margin-top: 100px;
+    text-align: left;
+    position: static;
+    color:lightgray;
+    margin: 0 auto;
+    font-size: 50px;
+    width:40%;
+    display: inline;
+    float:right;
+    list-style-type:none;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #2E4FFD;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: darkgray;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px darkgray;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+    background-color: white;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*
+=====================================
+Навигационная панель(остальной код) -
+=====================================
+*/
+
+.tab_drawer_heading { display: none; }
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
+	
+    
+    #logo1 {
+    -webkit-margin-top: 30%;
+-moz-margin-top: 30%;
+-o-margin-top: 30%;
+-ms-margin-top: 30%;
+    margin-top: 30%;
+    position: inherit;
+-webkit-height: 40%;
+-moz-height: 40%;
+-o-height: 40%;
+-ms-height: 40%;
+    height: 40%;
+    }
+    #mainPage
+    {
+/*-webkit-
+-moz-
+-o-
+-ms-*/
+
+
+        top: 0px;
+        left: 0px;
+    width: 100%;
+
+-webkit-height: 100%;
+-moz-height: 100%;
+-o-height: 100%;
+-ms-height: 100%;
+    height: 100%;
+-webkit-margin-top: 0%;
+-moz-margin-top: 0%;
+-o-margin-top: 0%;
+-ms-margin-top: 0%;
+    margin-top: 0%;
+        margin-bottom: 0%;
+    border-radius: 2px;
+    }
+    
+    .tab_container {
+    position: relative;
+-webkit-width: 100%;
+-moz-width: 100%;
+	width: 100%;
+-webkit-height: 100%;
+-moz-height: 100%;
+    height: 100%;
+    
+	border-top: none;
+	clear: both;
+	float: left;
+	width: 100%;
+    
+	background: #fff;
+	overflow: visible;
+    align-items: stretch;
+    }
+
+    #navpanel {
+	-webkit-border-top-left-radius: 0px;
+-moz-border-top-left-radius: 0px;
+-webkit-border-top-right-radius: 0px;
+-moz-border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+        width:100%;
+        height:100%;
+        position:absolute;
+        margin: 0 auto;
+    }
+
+
+
+    .Carousel-Controller
+    {
+        top: 60%;
+    }
+    #Carousel-Controller-Nav-left
+    {
+        margin-right: 20%;
+        display: inline-block;
+        color: darkblue;
+    }
+
+#Carousel-Controller-Nav-right
+{
+    margin-left:20%;
+    display: inline-block;
+}
+
+    
+}
+
+@media screen and (max-width:1018px)
+{
+    #header
+{
+    font-size: 30px;
+    
+}
+    
+}
+

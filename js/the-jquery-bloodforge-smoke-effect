@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://gmpg.org/xfn/11"><meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link rel="contents" title="Archive" href="/archive" />
+	<link rel="start" title="Filip's Blog" href="/" />
+	<link type="application/rsd+xml" rel="edituri" title="RSD" href="https://bloodforge.com/rsd.axd" />
+	<link type="application/rdf+xml" rel="meta" title="SIOC" href="https://bloodforge.com/sioc.axd" />
+	<link type="application/apml+xml" rel="meta" title="APML" href="https://bloodforge.com/apml.axd" />
+	<link type="application/rdf+xml" rel="meta" title="FOAF" href="https://bloodforge.com/foaf.axd" />
+	<link type="application/rss+xml" rel="alternate" title="Filip's Blog (RSS)" href="https://bloodforge.com/syndication.axd" />
+	<link type="application/atom+xml" rel="alternate" title="Filip's Blog (ATOM)" href="https://bloodforge.com/syndication.axd?format=atom" />
+	<link type="application/opensearchdescription+xml" rel="search" title="Filip's Blog" href="https://bloodforge.com/opensearch.axd" />
+	<link href="/Content/Auto/Global.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" href="../Custom/Themes/Bloodforge/style.css" type="text/css" />
+	<script type="text/javascript" src="/en-us.res.axd"></script>
+	<script type="text/javascript" src="/Scripts/Auto/01-jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="/Scripts/Auto/02-jquery.cookie.js"></script>
+	<script type="text/javascript" src="/Scripts/Auto/04-jquery-jtemplates.js"></script>
+	<script type="text/javascript" src="/Scripts/Auto/05-json2.min.js"></script>
+	<script type="text/javascript" src="/Scripts/Auto/blog.js"></script><link rel="shortcut icon" href="../myuploads/favicon.ico" type="image/x-icon" />
+
+    <script src="/Scripts/jquery.bloodforge.smoke-effect.1-0.min.js"></script>
+
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #disqus_thread {
+            background-color: white;
+            margin-top: 2em;
+            padding: 1em;
+        }
+    </style>
+
+	<meta name="description" content="Filip&#39;s Blog -  - I stumbled upon a very neat piece of code written by Jonny Cornwell for a particle smoke effect. The" />
+	<meta name="author" content="Admin " />
+<link rel="last" title="Running Local Web Pages in CefSharp.WPF" href="/post/running-local-web-pages-in-cefsharp-wpf" />
+<link rel="first" title="And Bloodforge is up again..." href="/post/And-Bloodforge-is-up-again" />
+<link type="application/rss+xml" rel="alternate" title="The jQuery Bloodforge Smoke Effect (RSS)" href="/post/feed/the-jquery-bloodforge-smoke-effect?format=ATOM" />
+<link type="application/rss+xml" rel="alternate" title="The jQuery Bloodforge Smoke Effect (ATOM)" href="/post/feed/the-jquery-bloodforge-smoke-effect?format=ATOM" />
+<!-- Start custom code -->
+<style>
+#kwh-detail, #kwh-summary { width: 100%; box-sizing: border-box; border-collapse: collapse; border-spacing: 0; table-layout: fixed }
+.e-mo, .e-year { background-color: black; color: white; text-align: center; }
+.e-air { background-color: lightgray; text-align: center; }
+.e-geo { background-color: lightgreen; text-align: center; }
+pre { overflow-x: auto; background-color: #efefef; }
+</style>
+<!-- End custom code -->
+<title>
+	The jQuery Bloodforge Smoke Effect
+</title></head>
+<body>
+
+  <div id="bgcanvas-container">
+  <canvas id="bgcanvas"></canvas>
+  </div>
+
+  <div id="body-content" style="position: relative; z-index: 1; top: 0; left: 0; max-width: 980px; margin: 0 auto;">
+
+      <div id="header">
+        <p><a href="https://bloodforge.com/">Filip's Blog</a></p>
+        <span></span>
+      </div>
+  
+      <div id="menu">
+        <a href="javascript:void(BlogEngine.filterByAPML())" class="apmlfilter">APML Фильтр</a>
+        <ul>
+          <li><a href="https://bloodforge.com/" rel="home">Главная</a></li>
+          <li><a href="https://bloodforge.com/archive.aspx">Архив</a></li>
+          <li><a href="https://bloodforge.com/contact.aspx">Контакт</a></li>
+          <li><a href="https://bloodforge.com/syndication.axd" class="feed"><img src="https://bloodforge.com/pics/rssButton.gif" alt="Feed" />Подписаться</a></li>
+          <li><span id="ctl00_aUser"></span><a href="/Account/Login.aspx" id="ctl00_aLogin">Войти</a></li>
+        </ul>
+      </div>
+  
+      <form method="post" action="/post/the-jquery-bloodforge-smoke-effect" id="aspnetForm" class="body">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="xSldHabwhNfpZHSrH48QSjEyOsutOu3XlhJmJy+6bbaTqnP5i8R90G9OUWZi3W/JTrsuawJ8ZPofOANkSOJoXjiFvNZxPdm4nCmIUIRvNqwI4mjmnW0/b40Ifl6iV2Cpxjt2abIYgwloYucKYKi/DrJ8ry6Wd6gLdl0ohpd4N9vifxr4hyCVPIlF3ncknFaHoVBpahSebs2fBon1si2f3e3i0GEeHzUfrM7bqhvvXJiIRsdnff7JpBWKpk+wyCy2gK3sdpdYoDzK1RQHFAAWz0ywqUd3MuvkufrTaX044/Q61NvXSJSjmbuoDhFh0aHx07GrSVnwX2YagEdzH8nFI6WSSFUqQ+F+8MYGbB1YOVTsycwj" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZKFmBG-AUY7YwSX-Eh_-So8UKa0fIVRDpGlQdJn4r3q4SNLVEw2&amp;t=636160628560000000" type="text/javascript"></script>
+
+    
+        <div id="content">
+          
+          
+  
+  
+
+  
+<div id="postnavigation">
+    <a href="/post/awesome-java-vs-net-video" class="nav-next">Awesome Java vs .NET video</a> |
+    <a href="/post/viewing-thermostat-statistics-via-logs-for-honeywell-prestige-iaq-2-thermostat" class="nav-prev">Thermostat Statistics via Logs for Honeywell Prestige IAQ 2</a>
+</div>
+
+ 
+  
+
+<div class="post xfolkentry" id="post0">
+    <div id="postheader0" class="post-header">
+      <h1><a href="/post/the-jquery-bloodforge-smoke-effect" class="taggedlink">The jQuery Bloodforge Smoke Effect</a></h1>
+      <span class="author">by <a href="/author/filip.aspx">filip</a></span>
+      <span class="pubDate">11. июня 2015 23:07</span>
+    </div>  
+  <div class="text"><p>I stumbled upon a very neat piece of code written by <a href="http://www.blog.jonnycornwell.com/">Jonny Cornwell</a> for a particle smoke effect. The concept was really neat, but I really wanted it to be easier to use. The end result is a jQuery plugin that allows the developer to add a particle smoke effect background to any element on the page.</p>
+
+<p><strong>The latest source files are located here:</strong></p>
+
+<ul>
+  <li>Source Code: <a href="https://bloodforge.com/Scripts/jquery.bloodforge.smoke-effect.1-0.js" target="_blank">jquery.bloodforge.smoke-effect.1-0.js</a> </li>
+
+  <li>Minified: <a href="https://bloodforge.com/Scripts/jquery.bloodforge.smoke-effect.1-0.min.js" target="_blank">jquery.bloodforge.smoke-effect.1-0.min.js</a> </li>
+</ul>
+
+<hr>
+
+<h2>Webkit</h2>
+<p>
+<code>&lt;div id="smoke-effect-standard" style="padding: 2em;"&gt;<br>&nbsp;&nbsp;&nbsp;This works in webkit!<br>&lt;/div&gt;
+<br>
+&lt;script&gt;
+<br>&nbsp;&nbsp;&nbsp;$('#smoke-effect-standard').SmokeEffect();
+<br>&lt;/script&gt;</code>
+</p>
+<div id="smoke-effect-standard" style="padding-bottom: 2em; padding-top: 2em; padding-left: 2em; padding-right: 2em">This works in webkit! </div>
+<script>
+    $('#smoke-effect-standard').SmokeEffect();
+</script>
+
+<p>The above code should work on webkit browsers (so Chrome, Safari). </p>
+
+<hr>
+
+<h2>Support all modern browsers</h2>
+
+<p>To make it work on Internet Explorer and Firefox, use the <strong>forceBackgroundRender</strong> flag. This has a much bigger performance hit (there is no performance hit on webkit since the standard render method is used), but it may be acceptable based on the size of the background.</p>
+<p>
+<code>&lt;div id="smoke-effect-force-background" style="padding: 2em;"&gt;<br>&nbsp;&nbsp;&nbsp;This works in all modern browsers!<br>&lt;/div&gt;
+<br>
+&lt;script&gt;
+<br>&nbsp;&nbsp;&nbsp;$('#smoke-effect-force-background').SmokeEffect( { <strong>forceBackgroundRender: true</strong> } );
+<br>&lt;/script&gt;</code>
+</p>
+
+<div id="smoke-effect-force-background" style="padding-bottom: 2em; padding-top: 2em; padding-left: 2em; padding-right: 2em">This works in all modern browsers! </div>
+<script>
+    $('#smoke-effect-force-background').SmokeEffect({ forceBackgroundRender: true });
+</script>
+
+<hr>
+
+<h2>Write directly to a canvas element</h2>
+
+<p>Also, if you call this directly on a <strong>CANVAS</strong> tag, it will draw directly to that element.</p>
+<p>
+<code>&lt;canvas id="smoke-effect-canvas" width="300" height="100" /&gt;
+<br>
+&lt;script&gt; <br>&nbsp;&nbsp;&nbsp;$('#smoke-effect-canvas').SmokeEffect(); <br>&lt;/script&gt;</code>
+</p>
+<p><canvas id="smoke-effect-canvas" width="300" height="100"></canvas><script>
+                                                                          $('#smoke-effect-canvas').SmokeEffect();
+</script></p>
+
+<hr>
+
+<h2>Options</h2>
+
+<ul>
+  <li><strong>backgroundColor</strong>: A hex or rgba value indicating the background color for the effect. If the container already has a background, the effect will inherit that. If the container does not have a background, it will be set to <strong>rgba(0, 0, 0, 0.5)</strong>. </li>
+
+  <li><strong>density</strong>: A number indicating how dense the smoke is. The higher the number, the more dense. The default is <strong>8</strong>. </li>
+
+  <li><strong>maximumVelocity</strong>: A number indicating how quickly the smoke travels. Default is <strong>1</strong> </li>
+
+  <li><strong>fps</strong>: A number indicating how often to redraw the smoke. Default is <strong>15</strong> </li>
+
+  <li><strong>forceBackgroundRender</strong>: If set to true, this will make the SmokeEffect work in browser that are not based on webkit. However, this comes at a performance hit. The default is <strong>false</strong> </li>
+
+  <li><strong>image</strong>: The image to use as the smoke particle. This can be either a URL or a Base64 string of the image. You can change the color of the smoke by changing the image. If you provide a custom image, you need to update the <strong>imageWidth</strong> and <strong>imageHeight</strong> properties described below. </li>
+
+  <li><strong>imageWidth</strong>: The width of the image for the smoke particle. Default is <strong>128</strong> pixels. </li>
+
+  <li><strong>imageHeight</strong>: The height of the image for the smoke particle. Default is <strong>128</strong> pixels. </li>
+</ul>
+
+<p>Example of setting all options (you don’t need to set all}.</p>
+<code>$('selector').SmokeEffect( {
+<br>&nbsp;&nbsp;&nbsp; backgroundColor: '#FF0000',
+<br>&nbsp;&nbsp;&nbsp; density: 12.
+<br>&nbsp;&nbsp;&nbsp; maximumVelocity: 1.5,
+<br>&nbsp;&nbsp;&nbsp; fps: 20,
+<br>&nbsp;&nbsp;&nbsp; forceBackgroundRender: true,
+<br>&nbsp;&nbsp;&nbsp; image: 'http://myurl.com/mySmokeImage.png',
+<br>&nbsp;&nbsp;&nbsp; imageWidth: 100,
+<br>&nbsp;&nbsp;&nbsp; imageHeight: 150
+<br>} );
+</code></div>
+
+  <div class="bottom">
+    <div class="ratingcontainer" style="visibility:hidden">282bbd98-3bec-4cec-8eae-e699d0f121cb|3|5.0|27604f05-86ad-47ef-9e05-950bb762570c</div>
+    <p class="tags">Tags: </p>
+    <p class="categories"></p>
+  </div>
+
+  <div class="footer">    
+    <div class="bookmarks">
+      <a rel="nofollow" title="Index 0" target="_blank" href="http://www.dotnetkicks.com/submit?url=https%3a%2f%2fbloodforge.com%2fpost%2fthe-jquery-bloodforge-smoke-effect&amp;title=The+jQuery+Bloodforge+Smoke+Effect">Submit to DotNetKicks...</a>
+    </div>
+    
+    
+    
+    
+    <a rel="bookmark" href="https://bloodforge.com/post.aspx?id=282bbd98-3bec-4cec-8eae-e699d0f121cb" title="The jQuery Bloodforge Smoke Effect">Permalink</a> |
+    <a rel="nofollow" href="/post/the-jquery-bloodforge-smoke-effect#comment"><span class="disqus-comment-count" data-disqus-identifier="https://bloodforge.com/post/the-jquery-bloodforge-smoke-effect">Comments</span></a>
+
+    
+    </div>
+</div>
+
+  
+  
+  
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+      <rdf:Description rdf:about="https://bloodforge.com/post/the-jquery-bloodforge-smoke-effect" dc:identifier="https://bloodforge.com/post/the-jquery-bloodforge-smoke-effect" dc:title="The jQuery Bloodforge Smoke Effect" trackback:ping="https://bloodforge.com/trackback.axd?id=282bbd98-3bec-4cec-8eae-e699d0f121cb" />
+    </rdf:RDF>
+  
+  
+  <div id="relatedPosts"><h3>Похожие записи</h3><div><a href="/post/jQuery-19-and-UI-110-tabs-with-cookies">jQuery 1.9 and UI 1.10 tabs with cookies</a><span>Seems like jQuery UI got rid of maintaining state with the latest implementation.
+Before, it pretty ...</span><a href="/post/Looking-backe280a6-Bloodforge-several-years-ago">Looking back… Bloodforge several years ago</a><span>I’ve known about the Wayback Machinefor a while, but for some reason, I never visited the site – unt...</span><a href="/post/And-Bloodforge-is-up-again">And Bloodforge is up again...</a><span>Well, after a few years of doing absolutely nothing with this site, I've decided to bring it up agai...</span></div></div>
+  
+  
+
+    
+    <div id="comment" class="comment-form well-global">
+      <div id="disqus_thread" class="form-horizontal"></div>
+    </div>
+    <script type="text/javascript">
+        var disqus_url = 'https://bloodforge.com/post/the-jquery-bloodforge-smoke-effect';
+        var disqus_developer = '0';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'https://murst.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+      
+          <p id="footer">
+            Using <a href="http://www.dotnetblogengine.net">BE.NET</a>
+          </p>
+        </div>
+
+        <div id="sidepanel">
+          <div id="widgetzone_be_WIDGET_ZONE" class="widgetzone">
+<div class="widget textbox"
+    id="widgetf506d03c-04bf-453a-a4a3-58dbc3ee9c51">
+    
+    
+    <h4>
+        Bloodforge Band</h4>
+    
+    <div class="content">
+        <p><a style="display: block; text-align: center;" href="https://www.facebook.com/BloodforgeBR"><img style="width: 100px; height: 100px;" src="../myuploads/bf-band.jpg" alt="" /></a></p>
+<p>Looking for the Bloodforge band site?&nbsp;<a href="https://www.facebook.com/BloodforgeBR">Click here</a>.</p>
+    </div>
+</div>
+
+<div class="widget search"
+    id="widgetd81c5ae3-e57e-4374-a539-5cdee45e639f">
+    
+    
+    <h4>
+        Search</h4>
+    
+    <div class="content">
+        <div id="searchbox">
+<label for="txt-d81c5ae3-e57e-4374-a539-5cdee45e639f" style="display:none">Search</label><input type="text" value="Enter search term or APML url" id="txt-d81c5ae3-e57e-4374-a539-5cdee45e639f" onkeypress="if(event.keyCode==13) return BlogEngine.search('/','txt-d81c5ae3-e57e-4374-a539-5cdee45e639f')" onfocus="BlogEngine.searchClear('Enter search term or APML url','txt-d81c5ae3-e57e-4374-a539-5cdee45e639f')" onblur="BlogEngine.searchClear('Enter search term or APML url','txt-d81c5ae3-e57e-4374-a539-5cdee45e639f')" /><input type="button" value="Поиск" id="searchbutton" onclick="BlogEngine.search('/','txt-d81c5ae3-e57e-4374-a539-5cdee45e639f');" onkeypress="BlogEngine.search('/','txt-d81c5ae3-e57e-4374-a539-5cdee45e639f');" /></div>
+
+    </div>
+</div>
+
+<div class="widget pagelist"
+    id="widgetc373f022-314e-4526-9860-a68a70e7c6f9">
+    
+    
+    <h4>
+        Other Pages</h4>
+    
+    <div class="content">
+        <ul id="pagelist" class="pagelist"><li><a href="/page/About-Filip-Stanek" title="About Filip Stanek">About Filip Stanek</a></li><li><a href="/page/Cincinnati-Contractors-I-Like" title="Cincinnati Vendors I&#39;ve used and would recommend to other people.">Cincinnati Contractors I Like</a></li></ul>
+    </div>
+</div>
+
+<div class="widget textbox"
+    id="widgetd9ada63d-3462-4c72-908e-9d35f0acce40">
+    
+    
+    <h4>
+        About Filip Stanek</h4>
+    
+    <div class="content">
+        <div><img style="float: left; margin-bottom: 5px; margin-right: 5px;" src="/myuploads/qr_100.png" alt="Death Note Pic" width="100" height="100" /> I'm a developer at <a href="http://www.acgmultimedia.com" target="_blank">ACG</a>&nbsp;in Cincinnati, OH. I like ASP.NET, Flash, and other web technologies, &amp; enjoy playing <a href="http://www.chessclub.com" target="_blank">chess</a>, video games, etc.<br /><br />Currently playing:
+<div style="margin-left: 20px;">- <a href="http://www.bungie.net/en/Legend/2/4611686018430381487/2305843009217856821" target="_blank">Destiny on PS4</a><a style="clear: both; float: right;" href="/contact.aspx">E-mail me <img style="width: 16px;" src="/pics/mail.gif" alt="Send mail" width="16" height="18" /> </a><br /><br /></div>
+</div>
+    </div>
+</div>
+
+<div class="widget disquscommentssummary"
+    id="widget620b9748-0853-4d97-bd72-8bc6f4a7c2cf">
+    
+    
+    <h4>
+        Disqus</h4>
+    
+    <div class="content">
+        <div id="disquscombination" class="dsq-widget"><script type="text/javascript" src="https://murst.disqus.com/combination_widget.js?num_items=5&hide_mods=0&color=grey&default_tab=recent&excerpt_length=100"></script></div>
+    </div>
+</div>
+
+<div class="widget tagcloud"
+    id="widget77142800-6dff-4016-99ca-69b5c5ebac93">
+    
+    
+    <h4>
+        Tag cloud</h4>
+    
+    <div class="content">
+        <ul id="ctl00_widgetContainer771428006dff401699ca69b5c5ebac93_771428006dff401699ca69b5c5ebac93_ulTags"><li><a href="https://bloodforge.com/?tag=2008-election" class="smallest" title="Tag: 2008 election">2008 election</a> </li><li><a href="https://bloodforge.com/?tag=actionscript" class="small" title="Tag: actionscript">actionscript</a> </li><li><a href="https://bloodforge.com/?tag=ajax" class="big" title="Tag: ajax">ajax</a> </li><li><a href="https://bloodforge.com/?tag=as3" class="small" title="Tag: as3">as3</a> </li><li><a href="https://bloodforge.com/?tag=aspnet" class="biggest" title="Tag: asp.net">asp.net</a> </li><li><a href="https://bloodforge.com/?tag=blogenginenet" class="medium" title="Tag: blogengine.net">blogengine.net</a> </li><li><a href="https://bloodforge.com/?tag=c" class="medium" title="Tag: c#">c#</a> </li><li><a href="https://bloodforge.com/?tag=comments" class="medium" title="Tag: comments">comments</a> </li><li><a href="https://bloodforge.com/?tag=css" class="smallest" title="Tag: css">css</a> </li><li><a href="https://bloodforge.com/?tag=excel" class="smallest" title="Tag: excel">excel</a> </li><li><a href="https://bloodforge.com/?tag=filip" class="smallest" title="Tag: filip">filip</a> </li><li><a href="https://bloodforge.com/?tag=flash" class="medium" title="Tag: flash">flash</a> </li><li><a href="https://bloodforge.com/?tag=gadgets" class="smallest" title="Tag: gadgets">gadgets</a> </li><li><a href="https://bloodforge.com/?tag=geothermal" class="small" title="Tag: geothermal">geothermal</a> </li><li><a href="https://bloodforge.com/?tag=hosting" class="small" title="Tag: hosting">hosting</a> </li><li><a href="https://bloodforge.com/?tag=html" class="medium" title="Tag: html">html</a> </li><li><a href="https://bloodforge.com/?tag=html5" class="smallest" title="Tag: html5">html5</a> </li><li><a href="https://bloodforge.com/?tag=ie" class="smallest" title="Tag: ie">ie</a> </li><li><a href="https://bloodforge.com/?tag=javascript" class="medium" title="Tag: javascript">javascript</a> </li><li><a href="https://bloodforge.com/?tag=mango" class="smallest" title="Tag: mango">mango</a> </li><li><a href="https://bloodforge.com/?tag=mp3" class="smallest" title="Tag: mp3">mp3</a> </li><li><a href="https://bloodforge.com/?tag=njoy" class="smallest" title="Tag: njoy">njoy</a> </li><li><a href="https://bloodforge.com/?tag=reCaptcha" class="small" title="Tag: reCaptcha">reCaptcha</a> </li><li><a href="https://bloodforge.com/?tag=ringtone" class="smallest" title="Tag: ringtone">ringtone</a> </li><li><a href="https://bloodforge.com/?tag=semantics" class="smallest" title="Tag: semantics">semantics</a> </li><li><a href="https://bloodforge.com/?tag=silverlight" class="smallest" title="Tag: silverlight">silverlight</a> </li><li><a href="https://bloodforge.com/?tag=spam" class="medium" title="Tag: spam">spam</a> </li><li><a href="https://bloodforge.com/?tag=visual-studio" class="smallest" title="Tag: visual studio">visual studio</a> </li><li><a href="https://bloodforge.com/?tag=wp7" class="medium" title="Tag: wp7">wp7</a> </li><li><a href="https://bloodforge.com/?tag=wpf" class="smallest" title="Tag: wpf">wpf</a> </li></ul>
+    </div>
+</div>
+
+<div class="widget monthlist"
+    id="widgetdaa76fe9-d4be-404a-bac0-2a49ffde7b3c">
+    
+    
+    <h4>
+        Month List</h4>
+    
+    <div class="content">
+        <ul id="monthList">
+	<li class="year" onclick="BlogEngine.toggleMonth(&#39;year2008&#39;)">2008<ul id="year2008">
+		<li><a href="/2008/05/default">Май</a> (5)</li><li><a href="/2008/06/default">Июнь</a> (3)</li><li><a href="/2008/07/default">Июль</a> (3)</li><li><a href="/2008/08/default">Август</a> (2)</li><li><a href="/2008/10/default">Октябрь</a> (2)</li><li><a href="/2008/11/default">Ноябрь</a> (1)</li>
+	</ul></li><li class="year" onclick="BlogEngine.toggleMonth(&#39;year2009&#39;)">2009<ul id="year2009">
+		<li><a href="/2009/01/default">Январь</a> (1)</li><li><a href="/2009/05/default">Май</a> (1)</li><li><a href="/2009/09/default">Сентябрь</a> (1)</li>
+	</ul></li><li class="year" onclick="BlogEngine.toggleMonth(&#39;year2010&#39;)">2010<ul id="year2010">
+		<li><a href="/2010/02/default">Февраль</a> (5)</li><li><a href="/2010/03/default">Март</a> (5)</li><li><a href="/2010/04/default">Апрель</a> (2)</li><li><a href="/2010/09/default">Сентябрь</a> (2)</li><li><a href="/2010/10/default">Октябрь</a> (1)</li><li><a href="/2010/11/default">Ноябрь</a> (1)</li>
+	</ul></li><li class="year" onclick="BlogEngine.toggleMonth(&#39;year2011&#39;)">2011<ul id="year2011">
+		<li><a href="/2011/08/default">Август</a> (2)</li><li><a href="/2011/09/default">Сентябрь</a> (2)</li><li><a href="/2011/10/default">Октябрь</a> (1)</li><li><a href="/2011/11/default">Ноябрь</a> (2)</li>
+	</ul></li><li class="year" onclick="BlogEngine.toggleMonth(&#39;year2012&#39;)">2012<ul id="year2012">
+		<li><a href="/2012/02/default">Февраль</a> (3)</li><li><a href="/2012/03/default">Март</a> (1)</li><li><a href="/2012/05/default">Май</a> (1)</li><li><a href="/2012/06/default">Июнь</a> (1)</li><li><a href="/2012/07/default">Июль</a> (2)</li><li><a href="/2012/08/default">Август</a> (2)</li><li><a href="/2012/10/default">Октябрь</a> (1)</li>
+	</ul></li><li class="year" onclick="BlogEngine.toggleMonth(&#39;year2013&#39;)">2013<ul id="year2013">
+		<li><a href="/2013/01/default">Январь</a> (1)</li>
+	</ul></li><li class="year" onclick="BlogEngine.toggleMonth(&#39;year2014&#39;)">2014<ul id="year2014">
+		<li><a href="/2014/03/default">Март</a> (1)</li><li><a href="/2014/04/default">Апрель</a> (2)</li><li><a href="/2014/06/default">Июнь</a> (1)</li><li><a href="/2014/10/default">Октябрь</a> (1)</li><li><a href="/2014/11/default">Ноябрь</a> (1)</li>
+	</ul></li><li class="year" onclick="BlogEngine.toggleMonth(&#39;year2015&#39;)">2015<ul id="year2015">
+		<li><a href="/2015/06/default">Июнь</a> (1)</li>
+	</ul></li><li class="year" onclick="BlogEngine.toggleMonth(&#39;year2016&#39;)">2016<ul id="year2016">
+		<li><a href="/2016/04/default">Апрель</a> (1)</li>
+	</ul></li><li class="year" onclick="BlogEngine.toggleMonth(&#39;year2017&#39;)">2017<ul id="year2017" class="open">
+		<li><a href="/2017/01/default">Январь</a> (1)</li>
+	</ul></li>
+</ul>
+    </div>
+</div>
+</div>
+        </div>
+        
+        <div style="clear: both;"></div>
+
+      
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="AD7AD114" />
+</div>
+
+<script type="text/javascript"> 
+//<![CDATA[ 
+(function() { var links = document.getElementsByTagName('a'); var query = '?'; for(var i = 0; i < links.length; i++) { if(links[i].href.indexOf('#comment') >= 0) { query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&'; }}document.write('<script charset="utf-8" type="text/javascript" src="https://disqus.com/forums/murst/get_num_replies.js' + query + '"></' + 'script>'); })(); 
+//]]> 
+</script> 
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-141117-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+  })();
+
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+var callBackFrameUrl='/WebResource.axd?d=beToSAE3vdsL1QUQUxjWdbqv_vsrVPNz5iJHVLj4a15-W6AG51mW0EakKiepjfuzRoi0AQ2&t=636160628560000000';
+WebForm_InitCallback();//]]>
+</script>
+</form>
+
+   </div>
+
+    <script>
+        $(function () {
+            $('#bgcanvas-container').css('position', 'fixed');
+            $('#bgcanvas').css('width', $(window).width() + 'px');
+            $('#bgcanvas').css('height', $(window).height() + 'px');
+
+            $(window).resize(function () {
+                $('#bgcanvas').css('width', $(window).width() + 'px');
+                $('#bgcanvas').css('height', $(window).height() + 'px');
+            });
+
+            $('#bgcanvas').SmokeEffect();
+        });
+    </script>
+  
+</body>
+</html>

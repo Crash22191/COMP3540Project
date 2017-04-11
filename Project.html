@@ -1,0 +1,382 @@
+<html>
+<head>
+    <title>COMPBaev</title>
+    <link rel="shortcut icon" href="images/image.ico" />
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="mainStylesheet.css">
+     <script type="text/javascript" src="mainJS.js" defer></script>
+<!--
+    <link rel="stylesheet" type="text/css" href="pace-theme-loading-bar.css">
+    <script type="text/javascript" src="js/pace.js" defer></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="css/bootstrap-grid.css">
+ 
+    <link rel="stylesheet" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <script type="text/javascript" src="js/jquery.cross-slide.js" defer></script>
+<!--
+    <script type="text/javascript" src="js/jquery.pause.js" defer></script>
+    <script type="text/javascript" src="js/jquery.pause.min.js" defer></script>
+-->
+<!--    <script src="http://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js" defer></script>-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+    <form id >
+        
+        
+    <div id="bodyBG" ></div>
+    
+<!--
+        <div id="mainPage1" class="mainPage1">
+        <img src="images/Logo.svg" class="logo1" id="logo1">
+            <br><br>
+            
+            <div id="loadingText">Загрузка Сайта</div>
+            <div id="loader"></div>
+        </div>
+-->
+    
+<!--.......................................................-->        
+<!--...............Login/Registr.............................-->
+<!--.......................................................-->       
+<!--.......................................................-->       
+
+        <div id="loginPage1" class="container col-centered">
+           
+         <form method='post' action='controller.php'  >
+            <div class = "row">
+                    <input type='hidden' name='page' value='StartPage'></input>
+                    <input type='hidden' name='command' value='SignIn'></input>
+                    <label class='modal-label' style="margin-left: 30px; margin-top: 5px;">Username:</label>
+                
+                    <input type='text' name='username' id="loginLogin" placeholder='Enter username' required></input>
+                   <?php if (!empty($error_msg_username)) echo $error_msg_username; ?>
+            </div>
+            <div class = "row">
+                    <label class='modal-label' style="margin-left: 30px; margin-top: 5px;" >Password:</label> 
+                    <input type='password' name='password' id="passwordLogin" placeholder='Enter password' required></input>
+                   <?php if (!empty($error_msg_password)) echo $error_msg_password; ?>
+            </div>
+    <br>
+            <div class="row" style="bottom:0;">
+                    <button type='submit' value='Submit' class="btn col-4" >Submit</button>
+                    <button type='reset' value='Reset' class="btn col-4" >Reset</button>
+                <div id='submitButton1' class="btn col-4" >Register</div>
+                </form>
+           
+    </div>
+
+        
+   
+ <form id='form-signout' method='post' action='controller.php' style='display:none'>
+            <input type='hidden' name='page' value='MainPage'>
+            <input type='hidden' name='command' value='SignOut'>
+        </form>
+        <script>
+            // When the 'SignOut' button is clicked
+            $('.signout').click(function() {
+                document.getElementById('form-signout').submit();
+            });
+              <?php
+                if (isset($display_type))
+                   if ($display_type == 'join')
+                        echo 'show_registr();';
+                    else
+                        ;
+            ?>
+        </script>
+<style>
+
+
+</style>
+           
+            
+        </div>
+<div id="registerPage" style="display:none">
+         <form method='post' action='controller.php' id="register">
+            <div class = "row">
+                    <input type='hidden' name='page' value='StartPage'></input>
+                    <input type='hidden' name='command' value='Join'></input>
+
+                    <label class='modal-label' style="margin-left: 30px; margin-top: 5px;" >Username:</label> 
+                    <input type='text' name='username' placeholder='Enter username'
+                           id="loginLogin" required></input>
+                    <?php if (!empty($error_msg_username)) echo $error_msg_username; ?>
+            </div>
+            <div class = "row">
+                    <label class='modal-label' style="margin-left: 30px; margin-top: 5px;">Password:</label> 
+                    <input type='password' name='password' placeholder='Enter password' id="passwordLogin" required></input>
+                    <?php if (!empty($error_msg_password)) echo $error_msg_password; ?>
+            </div>
+            <div class = "row">
+                    <label class='modal-label' style="margin-left: 30px; margin-top: 5px;">Email:</label> 
+                    <input type='text' name='email' placeholder='Enter email address'
+                           id="email"required></input>
+                    <?php if (!empty($error_msg_email)) echo $error_msg_email; ?>
+            </div>
+            <div class = "row" style="margin-top:22px;">
+            <button type='submit' value='Submit' class="btn col-4" style="margin-left: 45px; ">Submit</button>
+            <div id='cancelButton' class="btn col-4" style="margin-left: 30px; ">Cancel</div>
+</div>
+        </form>
+
+</div>
+
+        
+<!--.......................................................-->        
+<!--...............Гавное окно.............................-->
+<!--.......................................................-->           
+    <div id="mainPage" >   
+        <div id="navpanel">
+        <div id="navname">
+            
+            <div id="logoNavBar">Comp3540</div>
+            <div class="rightnav">
+            Username
+               <!-- <?php echo $username; ?>-->
+            </div>
+        </div>
+        
+            
+<!--...............Навигация правый верх......................-->               
+
+          
+
+<!--...............Навигация по окну......................-->               
+            <ul id="tabs" class="tabs">
+                <div id="border"></div>
+            <li class="active lielements" rel="tab1" id="li1" >
+                <div class="link"></div>Post Questions
+            </li>
+            <li class="lielements" rel="tab2" id="li2">
+                Answer Questions
+            </li>
+                     <script>
+
+        </script>
+                  <form id='form-signout' method='post' action='controller.php' style='display:none'>
+            <input type='hidden' name='page' value='MainPage'>
+            <input type='hidden' name='command' value='SignOut'>
+        </form>
+        <script>
+
+        </script>
+            <li class="lielements" rel="tab3" id="li3">
+                List Marks
+            </li>
+       
+            <li class="lielements" rel="tab4" id="li4">
+                Search Answers
+            </li>
+            <li class="lielements" rel="tab5" id="li5">
+                Your Answers
+            </li>
+            <li class="lielements" rel="tab6" id="li6">
+               
+            </li>   
+            <li class="lielements" rel="tab7" id="li7">
+                Signout
+            </li>
+            </ul>
+            
+            <div class="tab_container">
+               
+                <!--......................tab1...................... -->
+                <!--......................tab1...................... -->
+                <!--......................tab1...................... -->
+                <h3 class="d_active tab_drawer_heading" rel="tab1">Tab 1</h3>
+                <div id="tab1" class="tab_content"> 
+                    <form method='post' action='controller.php' style="padding-top: 8%">
+                    <div class="form-group row">
+                        <div class="col-1"></div>
+                        <label for="Quesion1" class="col-9 col-form-label">Question1</label>
+                        </div>
+                        <div class="row">
+                             <div class="col-1"></div>
+                        <div class="col-9">
+                            <input class="form-control" type="text" placeholder='Question1' name="question1">
+                            </div></div>
+                        <div class="row">
+                             <div class="col-1"></div>
+                    <div class="col-9">
+                        <input class="form-control" type="text" placeholder='Answer1' name="answer1">
+                    </div></div>
+                    
+                        <br>
+                       <div class="form-group row">
+                        <div class="col-1"></div>
+                        <label for="Quesion2" class="col-9 col-form-label">Question2</label>
+                        </div>
+                        <div class="row">
+                             <div class="col-1"></div>
+                        <div class="col-9">
+                            <input class="form-control" type="text" placeholder='Question2' name="question2">
+                            </div></div>
+                        <div class="row">
+                             <div class="col-1"></div>
+                    <div class="col-9">
+                        <input class="form-control" type="text" placeholder='Answer2' name="answer2">
+                    </div></div>
+                        
+                         <br>
+                     <div class="form-group row">
+                        <div class="col-1"></div>
+                        <label for="Quesion3" class="col-9 col-form-label">Question3</label>
+                        </div>
+                        <div class="row">
+                             <div class="col-1"></div>
+                        <div class="col-9">
+                            <input class="form-control" type="text" placeholder='Question3' name="question3">
+                            </div></div>
+                        <div class="row">
+                             <div class="col-1"></div>
+                    <div class="col-9">
+                        <input class="form-control" type="text" placeholder='Answer3' name="answer3">
+                    </div></div>
+                        
+                         <br>
+                      <div class="form-group row">
+                        <div class="col-1"></div>
+                        <label for="Quesion4" class="col-9 col-form-label">Question4</label>
+                        </div>
+                        <div class="row">
+                             <div class="col-1"></div>
+                        <div class="col-9">
+                            <input class="form-control" type="text" placeholder='Question4' name="question4">
+                            </div></div>
+                        <div class="row">
+                             <div class="col-1"></div>
+                    <div class="col-9">
+                        <input class="form-control" type="text" placeholder='Answer4' name="answer4">
+                    </div></div>
+        
+                        
+                         <br>
+                   
+                        <div class="col-10">
+                            <div class="col-2">
+                            </div>            
+                    <button type='submit' value='Submit' class="btn">Submit</button>
+                            </div>
+                        </form>
+                        </div>
+                        
+
+                
+                <!--......................tab2...................... -->
+                <!--......................tab2...................... -->
+                <!--......................tab2...................... -->
+                <h3 class="tab_drawer_heading" rel="tab2">Tab 2</h3>
+                <div id="tab2" class="tab_content" style="display:block">
+                    
+                    
+                    <!--...............Slider......................-->  
+                    <!--...............Slider......................-->     
+                    <!--...............Slider......................-->  
+                                    
+                    <div data-carousel="blah" class="Carousel">
+                       <!-- <div id="sliderBG">
+                            <img src="images/Fon_indigo.svg">
+                         </div> -->
+                        <div class="Carousel-Slide clearfix">
+                            <!--...............Item1......................-->  
+                            <div class="Carousel-Slide-item Carousel-Slide-item1">
+                                <div class="row" style="padding-top: 100px;">
+                                <div class="col-1 "></div>
+                                <div class="col-2 element" style="  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);" >
+                                    <img src="images/face_g.svg" class="col-4 d-inline" style="height:35px; margin-right: -20px; float:left; margin-left:-5px;">
+                                    <font class="col-3 d-inline" style="font-size:20px;  float:left;">username</font>
+                                    </div></div>
+
+
+                            </div>
+                            <!--...............Item2......................-->  
+                            <div class="Carousel-Slide-item Carousel-Slide-item2">
+                                 <form method='post' action='controller.php' style="padding-top: 8%">
+                            <div class="form-group row">
+                                <div class="col-2"></div>
+                                <label for="Answer12" class="col-9 col-form-label">Question1</label>
+                                </div>
+                                <div class="row">
+                                     <div class="col-2"></div>
+                            <div class="col-9">
+                                <input class="form-control" type="text" placeholder='Answer1' name="Answer12">
+                            </div></div>
+
+                            <br>
+                            <div class="form-group row">
+                                <div class="col-2"></div>
+                                <label for="Answer22" class="col-9 col-form-label">Question1</label>
+                                </div>
+                                <div class="row">
+                                     <div class="col-2"></div>
+                            <div class="col-9">
+                                <input class="form-control" type="text" placeholder='Answer2' name="Answer22">
+                            </div></div>
+
+                            <br>
+                               
+                                 
+                            </div>
+                            <!--...............Item3......................-->  
+                            <div class="Carousel-Slide-item Carousel-Slide-item3">
+                                <img id="glk" src="images/Galochka_v_kontse.svg">
+                                <p id="slider3p">Ваша заявка принята!</p>
+                                <br><br>
+                                <p id="lookat">Взгляните на наше портфолио</p>
+                                <div id="toli2">
+                                <font>Наши работы</font>
+                                <img src="images/ic_navigate_next_white_24px.svg"></div>
+                            </div>
+                        </div>
+                            <!--..............CONTROLS...................-->
+                                <div class="Carousel-Controller-Nav-left" id="Carousel-Controller-Nav-left">
+                                    <img src="images/ic_navigate_before_white_24px.svg">
+                                </div>
+                                <div id= "dots">
+                                    <font id="dot1">&bull;</font>
+                                    <font id="dot2">&bull;</font>
+                                    <font id="dot3">&bull;</font>
+                                </div>
+                                <div class="Carousel-Controller-Nav-right" id="Carousel-Controller-Nav-right">
+                                    <img src="images/ic_navigate_next_white_24px.svg">
+                                </div>
+                    </div>
+                 
+                </div>
+                <!--......................tab3...................... -->
+                <!--......................tab3...................... -->
+                <!--......................tab3...................... -->
+                <h3 class="tab_drawer_heading" rel="tab3">Tab 3</h3>
+                <div id="tab3" class="tab_content">
+                </div>
+                <!--......................tab4...................... -->
+                <!--......................tab4...................... -->
+                <!--......................tab4...................... -->
+                <h3 class="tab_drawer_heading" rel="tab4">Tab 4</h3>
+                <div id="tab4" class="tab_content">
+                </div>
+                <!--......................tab5...................... -->
+                <!--......................tab5...................... -->
+                <!--......................tab5...................... -->
+                <h3 class="tab_drawer_heading" rel="tab4">Tab 5</h3>
+                <div id="tab5" class="tab_content">
+                </div>
+            </div>
+        </div>
+    </div>     
+    </form>
+    
+
+    
+</body>
+    
+</html>
